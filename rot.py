@@ -5,6 +5,7 @@ except:
 	print("Error: Invalid input")
 	exit(-1)
 data = raw_input("Enter data to decrypt: ")
+data = data.lower() # ensuring the string is in all lowercase, in my case this is fine since i do not need excact decryption
 
 def encrypt_rot(rot, data):
 	enc_data = list()
@@ -20,7 +21,7 @@ def decrypt_rot(rot, data):
 	enc_data = list()
 	j = 0
 	for i in data:
-		if i == '/':
+		if i == '/' or i == ' ' or i == ',':
 			enc_data.append(i) 
 			continue
 		var = ((ord(i) - 97) - rot) % 26
