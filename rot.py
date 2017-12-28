@@ -4,7 +4,7 @@ try:
 except:
 	print("Error: Invalid input")
 	exit(-1)
-data = raw_input("Enter data to decrypt: ")
+data = raw_input("Enter data to process: ")
 data = data.lower() # ensuring the string is in all lowercase, in my case this is fine since i do not need excact decryption
 
 def encrypt_rot(rot, data):
@@ -35,4 +35,6 @@ if encrypt == 1:
 	encrypt_rot(13, data)
 elif encrypt == 0:
 	decrypt_rot(13, data)
-	
+
+
+# in order to generate the invite code, make a post request to /api/invite/generate
